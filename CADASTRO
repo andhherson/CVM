@@ -1,0 +1,15 @@
+library(readr)
+library(DT)
+
+
+
+#DOWNLOAD OF DATA
+
+  DATE <- "20200417"
+  LINK <- paste0("http://dados.cvm.gov.br/dados/FI/CAD/DADOS/inf_cadastral_fi_", DATE, ".csv")
+  DATASET_CVM <- read_csv2(LINK,locale(encoding = "CP1254"), col_names = TRUE, col_types = NULL)
+      
+      
+      
+  datatable(DATASET_CVM, filter = 'top', options = list( pageLength = 10, autoWidth = TRUE ))
+  
